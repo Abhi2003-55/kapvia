@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b101c">
+  <meta name="description" content="Kapvia connects ambitious businesses with exceptional people through permanent recruitment, contract hiring and talent advisory.">
+  <title>Kapvia — People Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #0b101c;
+      --ink: #f4f7f8;
+      --muted: #a6afc0;
+      --green: #141b2b;
+      --lime: #35dfbc;
+      --rust: #16d6b0;
+      --line: rgba(190, 207, 231, .14);
+      --display: "Manrope", "Trebuchet MS", sans-serif;
+      --body: "DM Sans", "Segoe UI", sans-serif;
+      --gutter: clamp(22px, 6.3vw, 96px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .skip-link { position: absolute; top: -60px; left: 16px; z-index: 20; padding: 12px 16px; background: var(--lime); color: var(--ink); }
+    .skip-link:focus { top: 12px; }
+    .site-header { position: absolute; inset: 0 0 auto; z-index: 10; padding: 25px var(--gutter); color: #fff; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1600px; margin: 0 auto; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+    .brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.64); border-radius: 50%; font: 700 13px var(--display); letter-spacing: 0; }
+    .brand-name { font: 700 12px var(--display); letter-spacing: .08em; text-transform: uppercase; }
+    .main-nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 45px); }
+    .main-nav a { color: inherit; text-decoration: none; font-size: 13px; font-weight: 500; transition: opacity .2s ease; }
+    .main-nav a:hover { opacity: .7; }
+    .main-nav .nav-contact { padding: 12px 17px; border: 1px solid rgba(255,255,255,.64); border-radius: 2px; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+    .hero { position: relative; display: flex; min-height: min(780px, 100svh); min-height: min(780px, 100vh); align-items: flex-end; overflow: hidden; background: #35443b; color: #fff; }
+    .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+    .hero::after { position: absolute; inset: 0; background: rgba(15, 28, 21, .52); content: ""; }
+    .hero-content { position: relative; z-index: 1; width: 100%; max-width: 1600px; margin: 0 auto; padding: 170px var(--gutter) 72px; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 25px; font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 1px; background: currentColor; content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { max-width: 900px; margin-bottom: 20px; font: 500 clamp(54px, 8.7vw, 124px)/.98 var(--display); letter-spacing: -.055em; }
+    .hero h1 span { display: block; color: var(--lime); }
+    .hero-copy { max-width: 500px; margin-bottom: 34px; color: rgba(255,255,255,.84); font-size: clamp(16px, 1.55vw, 19px); line-height: 1.65; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 18px; padding: 0 19px; border: 1px solid transparent; border-radius: 2px; background: var(--lime); color: var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+    .button:hover { background: #e8efb4; }
+    .button svg { width: 15px; height: 15px; }
+    .button-quiet { border-color: rgba(255,255,255,.55); background: transparent; color: #fff; }
+    .button-quiet:hover { border-color: #fff; background: #fff; color: var(--ink); }
+    .hero-foot { display: flex; justify-content: space-between; gap: 20px; max-width: 1600px; margin: 60px auto 0; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.78); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+    .hero-foot span:last-child { text-align: right; }
+    .section { padding: clamp(82px, 11vw, 155px) var(--gutter); }
+    .section-inner { max-width: 1320px; margin: 0 auto; }
+    .section-kicker { margin-bottom: 23px; color: var(--rust); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .intro-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 10vw; align-items: end; }
+    .intro-grid h2 { max-width: 800px; margin-bottom: 0; font: 500 clamp(40px, 6.1vw, 82px)/1.04 var(--display); letter-spacing: -.05em; }
+    .intro-grid h2 em { color: var(--green); font-style: normal; }
+    .intro-copy { max-width: 400px; padding-bottom: 5px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .intro-copy p:last-child { margin-bottom: 0; }
+    .services { padding-top: 0; }
+    .services-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 35px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .services-head h2 { margin: 0; font: 500 clamp(34px, 4.4vw, 58px)/1.1 var(--display); letter-spacing: -.045em; }
+    .services-head p { max-width: 300px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .service { position: relative; min-height: 310px; padding: 28px 30px 30px 0; border-bottom: 1px solid var(--line); }
+    .service + .service { padding-left: 30px; border-left: 1px solid var(--line); }
+    .service-number { display: block; margin-bottom: 68px; color: var(--rust); font-size: 12px; font-weight: 700; }
+    .service h3 { margin-bottom: 13px; font: 600 25px/1.2 var(--display); letter-spacing: -.03em; }
+    .service p { max-width: 320px; margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; background: var(--green); color: #fff; }
+    .feature-photo { min-height: 480px; overflow: hidden; }
+    .feature-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .feature-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(48px, 8vw, 112px); }
+    .feature-copy .section-kicker { color: var(--lime); }
+    .feature-copy h2 { max-width: 570px; margin-bottom: 23px; font: 500 clamp(42px, 5vw, 68px)/1.04 var(--display); letter-spacing: -.05em; }
+    .feature-copy > p:not(.section-kicker) { max-width: 490px; margin-bottom: 34px; color: rgba(255,255,255,.76); font-size: 15px; line-height: 1.8; }
+    .text-link { display: inline-flex; width: fit-content; align-items: center; gap: 14px; color: var(--lime); font-size: 13px; font-weight: 700; text-decoration: none; }
+    .text-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
+    .text-link:hover svg { transform: translateX(4px); }
+    .approach { background: #e8e6dc; }
+    .approach-top { display: grid; grid-template-columns: 1fr .7fr; gap: 10vw; align-items: end; margin-bottom: 68px; }
+    .approach-top h2 { max-width: 700px; margin: 0; font: 500 clamp(40px, 6vw, 78px)/1.03 var(--display); letter-spacing: -.05em; }
+    .approach-top > p { max-width: 390px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+    .step { padding: 22px 22px 0 0; }
+    .step + .step { padding-left: 22px; border-left: 1px solid var(--line); }
+    .step-number { display: block; margin-bottom: 42px; color: var(--rust); font-size: 12px; font-weight: 700; }
+    .step h3 { margin-bottom: 11px; font: 600 20px var(--display); }
+    .step p { max-width: 230px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .contact { padding-bottom: 95px; }
+    .contact-panel { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; padding: clamp(34px, 6vw, 74px); background: var(--lime); }
+    .contact-panel .section-kicker { color: var(--green); }
+    .contact-panel h2 { max-width: 780px; margin-bottom: 15px; font: 500 clamp(42px, 6vw, 78px)/1.02 var(--display); letter-spacing: -.05em; }
+    .contact-panel p:not(.section-kicker) { max-width: 480px; margin-bottom: 0; color: #4c5947; font-size: 15px; line-height: 1.7; }
+    .contact-panel .button { flex: 0 0 auto; background: var(--ink); color: #fff; }
+    .contact-panel .button:hover { background: var(--green); }
+    .site-footer { padding: 29px var(--gutter); background: var(--ink); color: #fff; }
+    .footer-inner { display: flex; max-width: 1600px; align-items: center; justify-content: space-between; gap: 20px; margin: 0 auto; }
+    .footer-inner .brand-mark { width: 36px; height: 36px; }
+    .footer-note { margin: 0; color: rgba(255,255,255,.62); font-size: 11px; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { color: rgba(255,255,255,.78); font-size: 11px; text-decoration: none; }
+    .footer-links a:hover { color: var(--lime); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 800px) {
+      .site-header { padding-top: 17px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .main-nav { position: absolute; top: 70px; right: var(--gutter); left: var(--gutter); display: none; align-items: stretch; gap: 0; padding: 10px 18px; border: 1px solid rgba(255,255,255,.28); background: #25352d; }
+      .main-nav.is-open { display: flex; flex-direction: column; }
+      .main-nav a { padding: 14px 5px; border-bottom: 1px solid rgba(255,255,255,.17); }
+      .main-nav .nav-contact { margin-top: 9px; padding: 13px; border: 1px solid rgba(255,255,255,.5); text-align: center; }
+      .hero { min-height: 720px; min-height: max(700px, 94svh); }
+      .hero-content { padding-top: 145px; padding-bottom: 40px; }
+      .hero-foot { margin-top: 45px; }
+      .intro-grid, .approach-top { grid-template-columns: 1fr; gap: 28px; }
+      .intro-copy { max-width: 560px; }
+      .services-head { align-items: start; flex-direction: column; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: 0; padding: 22px 0 26px; }
+      .service + .service { padding-left: 0; border-left: 0; }
+      .service-number { margin-bottom: 25px; }
+      .feature { grid-template-columns: 1fr; }
+      .feature-photo { min-height: 380px; max-height: 62vw; }
+      .feature-copy { padding: 58px var(--gutter) 68px; }
+      .steps { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+      .step:nth-child(3) { padding-left: 0; border-left: 0; }
+      .step-number { margin-bottom: 25px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 27px; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { font-size: 10px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .hero { min-height: 740px; min-height: max(700px, 92svh); }
+      .hero h1 { font-size: clamp(52px, 16vw, 76px); }
+      .hero-foot { font-size: 9px; }
+      .hero-foot span:first-child { max-width: 58%; }
+      .hero-foot span:last-child { max-width: 38%; }
+      .steps { grid-template-columns: 1fr; }
+      .step, .step + .step { padding: 18px 0 0; border-left: 0; }
+      .step-number { margin-bottom: 18px; }
+      .feature-photo { min-height: 300px; max-height: none; }
+      .footer-inner { align-items: flex-start; flex-wrap: wrap; }
+      .footer-note { order: 3; width: 100%; }
+      .footer-links { margin-left: auto; flex-direction: column; gap: 9px; text-align: right; }
+    }
+
+    /* Recruitment-inspired dark interface based on the supplied references. */
+    body { background: #0b101c; color: #f3f6fa; }
+    .site-header { position: absolute; padding: 17px var(--gutter); background: rgba(8, 13, 24, .86); backdrop-filter: blur(16px); }
+    .brand { gap: 8px; }
+    .brand-mark { width: 38px; height: 38px; border: 0; border-radius: 0; color: var(--lime); font-size: 31px; font-weight: 800; line-height: .9; }
+    .brand-name { font-size: 20px; font-weight: 800; letter-spacing: -.035em; text-transform: none; }
+    .brand-name small { display: block; margin-top: 2px; color: #aeb7c7; font: 700 9px var(--body); letter-spacing: .17em; text-transform: uppercase; }
+    .main-nav { gap: clamp(15px, 2.2vw, 32px); }
+    .main-nav a { color: #e2e7ef; font-size: 12px; }
+    .main-nav .nav-contact { padding: 9px 13px; border: 1px solid rgba(22,214,176,.65); color: var(--lime); }
+    .main-nav .nav-job { background: var(--lime); color: #07131a; }
+    .hero.split-hero { min-height: 730px; height: min(790px, 100svh); align-items: stretch; padding-top: 68px; background: #0a0f1a; }
+    .hero.split-hero::after { display: none; }
+    .split-grid { display: grid; width: 100%; grid-template-columns: 1fr 1fr; }
+    .split-panel { position: relative; display: flex; min-width: 0; align-items: center; overflow: hidden; padding: 70px clamp(28px, 4vw, 64px); isolation: isolate; }
+    .split-panel + .split-panel { border-left: 2px solid var(--lime); }
+    .split-panel > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .split-panel::after { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(7,12,22,.94), rgba(7,12,22,.72) 68%, rgba(7,12,22,.54)); content: ""; }
+    .candidate-panel::after { background: linear-gradient(90deg, rgba(7,12,22,.74), rgba(7,12,22,.86) 65%, rgba(7,12,22,.95)); }
+    .split-copy { width: min(100%, 540px); margin: 24px auto 0; }
+    .split-label { display: inline-block; margin-bottom: 17px; padding: 5px 9px; border: 1px solid rgba(22,214,176,.65); color: var(--lime); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .split-copy h1 { max-width: 560px; margin-bottom: 22px; font: 800 clamp(46px, 5vw, 70px)/1.04 var(--display); letter-spacing: -.045em; }
+    .split-copy h2 { max-width: 560px; margin-bottom: 22px; font: 800 clamp(46px, 5vw, 70px)/1.04 var(--display); letter-spacing: -.045em; }
+    .split-copy p { max-width: 430px; margin-bottom: 25px; color: #d0d7e2; font-size: 14px; line-height: 1.75; }
+    .button { min-height: 45px; gap: 14px; padding: 0 17px; border-radius: 3px; background: var(--lime); color: #07131a; font-size: 12px; }
+    .button:hover { background: #72efd4; }
+    .button-quiet { border-color: var(--lime); background: transparent; color: var(--lime); }
+    .button-quiet:hover { border-color: var(--lime); background: var(--lime); color: #07131a; }
+    .split-copy .button svg, .contact-form .button svg { width: 14px; height: 14px; }
+    .metrics { padding: 30px var(--gutter); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #101727; }
+    .metrics-grid { display: grid; max-width: 1320px; grid-template-columns: repeat(4, 1fr); margin: 0 auto; }
+    .metric { padding: 8px 22px; text-align: center; }
+    .metric + .metric { border-left: 1px solid var(--line); }
+    .metric strong { display: block; margin-bottom: 6px; color: var(--lime); font: 700 19px var(--display); }
+    .metric span { color: #c4ccda; font-size: 11px; }
+    .dark-section { background: #0b101c; }
+    .dark-section .section-kicker, .dark-section .service-number { color: var(--lime); }
+    .dark-section .services-head { border-color: var(--line); }
+    .dark-section .services-head h2 { font-weight: 700; }
+    .dark-section .services-head p, .dark-section .service p { color: #aeb7c7; }
+    .dark-section .service-grid { gap: 16px; }
+    .dark-section .service, .dark-section .service + .service { min-height: 220px; padding: 23px; border: 1px solid rgba(177,197,224,.16); border-radius: 7px; background: linear-gradient(135deg, rgba(23,34,55,.93), rgba(18,25,42,.82)); }
+    .dark-section .service::after { position: absolute; top: 0; right: 0; width: 54px; height: 54px; background: linear-gradient(135deg, transparent 49%, rgba(22,214,176,.13) 50%); content: ""; }
+    .dark-section .service-number { display: grid; width: 34px; height: 34px; place-items: center; margin-bottom: 24px; border: 1px solid rgba(22,214,176,.22); border-radius: 5px; background: rgba(22,214,176,.1); font-size: 14px; }
+    .dark-section .service h3 { font-size: 19px; }
+    .about-feature { display: grid; min-height: 520px; grid-template-columns: 1fr 1fr; background: #111a2b; }
+    .about-feature .feature-photo { min-height: 520px; }
+    .about-feature .feature-photo img { filter: saturate(.78); }
+    .about-feature .feature-copy { padding: clamp(42px, 7vw, 95px); }
+    .about-feature .feature-copy .section-kicker { color: var(--lime); }
+    .about-feature .feature-copy h2 { font-weight: 700; }
+    .about-feature .feature-copy > p:not(.section-kicker) { color: #b9c3d2; }
+    .text-link { color: var(--lime); }
+    .industries { background: #0d1422; }
+    .industry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; }
+    .industry-layout h2 { max-width: 620px; margin-bottom: 18px; font: 700 clamp(36px, 4.4vw, 58px)/1.08 var(--display); letter-spacing: -.04em; }
+    .industry-layout p { max-width: 480px; color: #aeb7c7; font-size: 14px; line-height: 1.75; }
+    .industry-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .industry-tags span { padding: 9px 13px; border: 1px solid rgba(149,171,202,.24); border-radius: 4px; background: #151f32; color: #dce4ef; font-size: 12px; }
+    .manifesto { padding: 30px; border: 1px solid rgba(22,214,176,.22); border-radius: 6px; background: linear-gradient(145deg, #17233a, #111a2b); }
+    .manifesto-mark { display: block; margin-bottom: 16px; color: var(--lime); font: 700 36px var(--display); }
+    .manifesto blockquote { margin: 0 0 20px; font: 600 clamp(22px, 2.7vw, 34px)/1.3 var(--display); letter-spacing: -.025em; }
+    .manifesto p { margin: 0; color: var(--lime); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .contact-section { padding-top: 100px; background: #0b101c; }
+    .contact-heading { max-width: 800px; margin: 0 auto 48px; text-align: center; }
+    .contact-heading .section-kicker { color: var(--lime); }
+    .contact-heading h2 { margin-bottom: 13px; font: 700 clamp(38px, 5.4vw, 68px)/1.08 var(--display); letter-spacing: -.04em; }
+    .contact-heading p { color: #b3bdcd; font-size: 14px; line-height: 1.7; }
+    .contact-heading .enquiry-launch { margin-top: 8px; }
+    .contact-layout { display: grid; max-width: 1160px; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 5vw, 64px); margin: 0 auto; align-items: start; }
+    .contact-details { padding: 35px 10px; }
+    .contact-details h3 { margin-bottom: 14px; font: 700 23px var(--display); }
+    .contact-details > p { max-width: 350px; margin-bottom: 32px; color: #aeb7c7; font-size: 14px; line-height: 1.7; }
+    .contact-item { display: flex; gap: 14px; align-items: center; margin: 20px 0; color: #dce4ef; font-size: 13px; }
+    .contact-item-icon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 4px; background: rgba(22,214,176,.12); color: var(--lime); }
+    .contact-item a { color: var(--lime); text-decoration: none; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; padding: clamp(22px, 4vw, 38px); border: 1px solid rgba(177,197,224,.16); border-radius: 7px; background: #101727; }
+    .contact-form label { display: grid; gap: 8px; color: #e2e8f0; font-size: 11px; font-weight: 600; }
+    .contact-form .full-width { grid-column: 1 / -1; }
+    .contact-form input, .contact-form select, .contact-form textarea { width: 100%; min-height: 43px; padding: 10px 12px; border: 1px solid rgba(156,178,208,.25); border-radius: 4px; outline: none; background: #19243a; color: #f3f6fa; font: 13px var(--body); }
+    .contact-form textarea { min-height: 92px; resize: vertical; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--lime); box-shadow: 0 0 0 2px rgba(22,214,176,.12); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #8592a7; }
+    .contact-form select option { background: #19243a; }
+    .contact-form .button { width: fit-content; cursor: pointer; }
+    .form-note { grid-column: 1 / -1; margin: -5px 0 0; color: #8793a8; font-size: 10px; line-height: 1.5; }
+    .site-footer { border-top: 1px solid var(--line); background: #080d17; }
+    .footer-inner .brand-name { color: #fff; }
+    .footer-note { color: #98a3b5; }
+    .footer-links a { color: #c4ccda; }
+    @media (max-width: 800px) {
+      .site-header { background: rgba(8,13,24,.95); }
+      .main-nav { top: 61px; border-color: rgba(22,214,176,.25); background: #101727; }
+      .main-nav .nav-contact { border-color: rgba(22,214,176,.45); }
+      .hero.split-hero { height: auto; min-height: 0; padding-top: 68px; }
+      .split-grid { grid-template-columns: 1fr; }
+      .split-panel { min-height: 470px; padding: 45px var(--gutter); }
+      .split-panel + .split-panel { border-top: 2px solid var(--lime); border-left: 0; }
+      .split-copy { margin: 0; }
+      .split-copy h1, .split-copy h2 { max-width: 540px; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); row-gap: 18px; }
+      .metric:nth-child(3) { border-left: 0; }
+      .dark-section .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-feature { grid-template-columns: 1fr; }
+      .about-feature .feature-photo { min-height: 360px; max-height: 55vw; }
+      .about-feature .feature-copy { padding: 54px var(--gutter) 65px; }
+      .industry-layout, .contact-layout { grid-template-columns: 1fr; }
+      .contact-details { padding: 0; }
+    }
+    @media (max-width: 480px) {
+      .split-panel { min-height: 430px; }
+      .split-copy h1, .split-copy h2 { font-size: clamp(44px, 11vw, 58px); }
+      .metric { padding: 8px 10px; }
+      .metric strong { font-size: 16px; }
+      .metric span { font-size: 10px; }
+      .dark-section .service-grid { grid-template-columns: 1fr; }
+      .dark-section .service, .dark-section .service + .service { min-height: 190px; }
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form .full-width, .form-note { grid-column: auto; }
+    }
+    .audience-section { display: grid; min-height: 570px; grid-template-columns: 1fr 1fr; background: #101727; }
+    .audience-section.reverse .audience-image { order: 2; }
+    .audience-image { min-height: 480px; overflow: hidden; }
+    .audience-image img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.82); }
+    .audience-content { display: flex; flex-direction: column; justify-content: center; padding: clamp(42px, 7vw, 96px); }
+    .audience-content .section-kicker { color: var(--lime); }
+    .audience-content h2 { max-width: 610px; margin-bottom: 20px; font: 800 clamp(38px, 4.4vw, 60px)/1.06 var(--display); letter-spacing: -.04em; }
+    .audience-content > p:not(.section-kicker) { max-width: 510px; margin-bottom: 24px; color: #b7c1d1; font-size: 15px; line-height: 1.8; }
+    .audience-points { display: grid; gap: 13px; margin: 0 0 29px; }
+    .audience-point { display: flex; align-items: baseline; gap: 12px; color: #e8edf5; font-size: 13px; }
+    .audience-point::before { flex: 0 0 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); content: ""; }
+    .audience-content .button { width: fit-content; }
+    .form-switch { display: flex; gap: 8px; margin-bottom: 15px; }
+    .form-switch button { min-height: 40px; padding: 0 14px; border: 1px solid rgba(156,178,208,.27); border-radius: 4px; background: #101727; color: #c4ccda; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .form-switch button[aria-pressed="true"] { border-color: var(--lime); background: rgba(53,223,188,.11); color: var(--lime); }
+    .google-form-wrap { overflow: hidden; border: 1px solid rgba(177,197,224,.16); border-radius: 7px; background: #101727; }
+    .google-form-head { display: flex; min-height: 55px; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 17px; border-bottom: 1px solid var(--line); color: #e8edf5; font-size: 12px; font-weight: 700; }
+    .google-form-head a { color: var(--lime); font-size: 11px; text-decoration: none; }
+    .google-form-frame { display: block; width: 100%; height: 780px; border: 0; background: #fff; }
+    .form-setup-note { margin: 0 0 14px; padding: 13px 15px; border: 1px solid rgba(53,223,188,.22); border-radius: 4px; background: rgba(53,223,188,.07); color: #c4d5d7; font-size: 12px; line-height: 1.6; }
+    .form-setup-note a { color: var(--lime); }
+    .email-fallback { margin-top: 14px; border: 1px solid rgba(177,197,224,.16); border-radius: 6px; background: #101727; }
+    .email-fallback summary { padding: 15px 17px; color: var(--lime); font-size: 12px; font-weight: 700; cursor: pointer; }
+    .email-fallback[open] .contact-form { border: 0; border-top: 1px solid var(--line); border-radius: 0 0 6px 6px; }
+    @media (max-width: 800px) {
+      .audience-section { grid-template-columns: 1fr; }
+      .audience-section.reverse .audience-image { order: 0; }
+      .audience-image { min-height: 340px; max-height: 52vw; }
+      .audience-content { padding: 50px var(--gutter) 60px; }
+    }
+    @media (max-width: 480px) {
+      .google-form-head { align-items: flex-start; flex-direction: column; gap: 7px; }
+      .google-form-frame { height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Kapvia home">
+        <span class="brand-mark" aria-hidden="true">›</span>
+        <span class="brand-name">Kapvia<small>People Solutions</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#employer-solutions">For Employers</a>
+        <a href="#candidate-opportunities">For Candidates</a>
+        <a href="#expertise">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-contact" href="#contact" data-enquiry="employer">Hire Talent <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact nav-job" href="#contact" data-enquiry="candidate">Find a Job <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero split-hero" id="top" aria-label="Recruitment for employers and candidates">
+      <div class="split-grid">
+        <article class="split-panel employer-panel" id="employers">
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="A diverse team collaborating in a meeting" fetchpriority="high">
+          <div class="split-copy">
+            <span class="split-label">For Employers</span>
+            <h1>We Find the<br>Right People.</h1>
+            <p>Scale your team with precision. We source, screen and connect you with talent that moves your business forward.</p>
+            <a class="button" href="#contact" data-enquiry="employer">Hire Talent <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+        <article class="split-panel candidate-panel" id="candidates">
+          <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="A smiling business professional in a suit" fetchpriority="high">
+          <div class="split-copy">
+            <span class="split-label">For Candidates</span>
+            <h2>Your Next Role<br>Starts Here.</h2>
+            <p>Discover opportunities that match your skills and ambitions. Let’s connect you with employers who value what you bring.</p>
+            <a class="button button-quiet" href="#contact" data-enquiry="candidate">Find a Job <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Our recruitment capabilities">
+      <div class="metrics-grid">
+        <div class="metric"><strong>Permanent</strong><span>Build your core team</span></div>
+        <div class="metric"><strong>Contract</strong><span>Flexible talent, when needed</span></div>
+        <div class="metric"><strong>Executive</strong><span>Leadership that moves you forward</span></div>
+        <div class="metric"><strong>Consulting</strong><span>Smarter people decisions</span></div>
+      </div>
+    </section>
+
+    <section class="audience-section" id="employer-solutions" aria-labelledby="employer-title">
+      <div class="audience-image"><img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Colleagues smiling and shaking hands in an office" loading="lazy"></div>
+      <div class="audience-content reveal">
+        <p class="section-kicker">For employers</p>
+        <h2 id="employer-title">Build a team ready for what’s next.</h2>
+        <p>Tell us where you’re headed. We’ll bring you a focused shortlist of people with the skills, experience and mindset your team needs.</p>
+        <div class="audience-points">
+          <div class="audience-point">A clear brief and search plan</div>
+          <div class="audience-point">Relevant, carefully screened talent</div>
+          <div class="audience-point">A responsive partner from brief to offer</div>
+        </div>
+        <a class="button" href="#contact" data-enquiry="employer">Start a hiring enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="audience-section reverse" id="candidate-opportunities" aria-labelledby="candidate-title">
+      <div class="audience-image"><img src="https://images.pexels.com/photos/3184285/pexels-photo-3184285.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Business professionals sharing ideas in a modern office" loading="lazy"></div>
+      <div class="audience-content reveal">
+        <p class="section-kicker">For candidates</p>
+        <h2 id="candidate-title">Find work that fits your ambition.</h2>
+        <p>Take the next step with a team that sees your strengths. Share the kind of role you’re looking for and we’ll help you explore what could fit.</p>
+        <div class="audience-points">
+          <div class="audience-point">Permanent and contract opportunities</div>
+          <div class="audience-point">Straightforward, confidential conversations</div>
+          <div class="audience-point">Support through every stage of the process</div>
+        </div>
+        <a class="button button-quiet" href="#contact" data-enquiry="candidate">Share your profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section services dark-section" id="expertise" aria-labelledby="services-title">
+      <div class="section-inner">
+        <div class="services-head reveal">
+          <div><p class="section-kicker">What we do</p><h2 id="services-title">Staffing solutions built for your next move.</h2></div>
+          <p>From a critical first hire to a growing team, we bring the reach and care to find the right fit.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service reveal"><span class="service-number" aria-hidden="true">01</span><h3>Permanent Staffing</h3><p>Full-time hires who can grow with you. We match people to your culture, not just a job description.</p></article>
+          <article class="service reveal"><span class="service-number" aria-hidden="true">02</span><h3>Contract Hiring</h3><p>Flexible talent for project-based needs. Add specialist skills and scale your team with confidence.</p></article>
+          <article class="service reveal"><span class="service-number" aria-hidden="true">03</span><h3>Executive Search</h3><p>Find exceptional leaders for pivotal roles through discreet, thoughtful and research-led search.</p></article>
+          <article class="service reveal"><span class="service-number" aria-hidden="true">04</span><h3>Talent Consulting</h3><p>Plan your workforce, sharpen your hiring process and make every people decision count.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature about-feature" id="about" aria-labelledby="feature-title">
+      <div class="feature-photo"><img src="https://images.pexels.com/photos/3184632/pexels-photo-3184632.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Professionals collaborating during a team meeting" loading="lazy"></div>
+      <div class="feature-copy reveal">
+        <p class="section-kicker">People solutions, with people at the centre</p>
+        <h2 id="feature-title">Built on experience. Focused on the right fit.</h2>
+        <p>Kapvia brings employers and candidates together with thoughtful search, clear communication and a commitment to relationships that last beyond the first day.</p>
+        <a class="text-link" href="#contact">Meet your hiring partner <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section industries" id="approach" aria-labelledby="approach-title">
+      <div class="section-inner industry-layout">
+        <div class="reveal">
+          <p class="section-kicker">Where we work</p>
+          <h2 id="approach-title">Good people make every industry stronger.</h2>
+          <p>Our search is shaped around the work, the team and the market you’re hiring into. We support growing organisations across specialist and established sectors.</p>
+          <div class="industry-tags" aria-label="Industries served"><span>Technology</span><span>Financial Services</span><span>Healthcare</span><span>Manufacturing</span><span>Commerce</span><span>Consulting</span><span>Logistics</span></div>
+        </div>
+        <aside class="manifesto reveal" aria-label="Our belief">
+          <span class="manifesto-mark" aria-hidden="true">“</span>
+          <blockquote>The right hire changes more than a headcount. It changes what a team can do next.</blockquote>
+          <p>The Kapvia point of view</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-inner">
+        <div class="contact-heading reveal">
+          <p class="section-kicker">Get in touch</p>
+          <h2 id="contact-title">Let’s start a conversation.</h2>
+          <p>Hiring for a role or looking for your next opportunity? Tell us a little about what you need.</p>
+          <button class="button enquiry-launch" id="enquiry-launch" type="button">Inquire Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-details reveal">
+            <h3>Talk to Kapvia</h3>
+            <p>We’ll connect you with the right person and get back to you as soon as we can.</p>
+            <div class="contact-item"><span class="contact-item-icon" aria-hidden="true">@</span><a href="mailto:hello@kapvia.in">hello@kapvia.in</a></div>
+            <div class="contact-item"><span class="contact-item-icon" aria-hidden="true">↗</span><span>Recruitment, consulting &amp; talent search</span></div>
+          </div>
+          <div class="contact-form-area reveal" id="enquiry-panel" hidden>
+            <div class="form-switch" role="group" aria-label="Choose enquiry form">
+              <button type="button" data-form-choice="employer" aria-pressed="true">Employer enquiry</button>
+              <button type="button" data-form-choice="candidate" aria-pressed="false">Candidate enquiry</button>
+            </div>
+            <div class="form-setup-note" id="form-setup-note">If Google Forms asks you to sign in, use the email enquiry form below instead.</div>
+            <div class="google-form-wrap" id="google-form-wrap" hidden>
+              <div class="google-form-head"><span id="google-form-title">Employer enquiry</span><a id="google-form-open" href="#contact" target="_blank" rel="noopener noreferrer">Open in Google Forms ↗</a></div>
+              <iframe class="google-form-frame" id="google-form-frame" title="Kapvia enquiry Google Form" loading="lazy"></iframe>
+            </div>
+            <details class="email-fallback">
+              <summary>Use the email enquiry form</summary>
+              <form class="contact-form" id="enquiry-form">
+            <label>Your Name *<input name="name" autocomplete="name" placeholder="Your full name" required></label>
+            <label>Work Email *<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required></label>
+            <label>Phone Number<input name="phone" type="tel" autocomplete="tel" placeholder="+1 555 010 1234"></label>
+            <label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label>
+            <label>I'm interested in *<select name="enquiry" id="enquiry-type" required><option value="" selected disabled>Select an enquiry type</option><option value="Hiring talent">Hiring talent</option><option value="Finding a job">Finding a job</option><option value="Talent consulting">Talent consulting</option></select></label>
+            <label>Hiring Need<textarea name="message" placeholder="Tell us about the role, skills or opportunity" required></textarea></label>
+            <button class="button full-width" type="submit">Submit Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></button>
+            <p class="form-note">Submitting opens your email app with the enquiry details ready to send.</p>
+              </form>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand" href="#top" aria-label="Kapvia, back to top"><span class="brand-mark" aria-hidden="true">›</span><span class="brand-name">Kapvia<small>People Solutions</small></span></a>
+      <p class="footer-note">Connecting people with what’s next.</p>
+      <div class="footer-links"><a href="#expertise">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.main-nav');
+    const enquiryPanel = document.querySelector('#enquiry-panel');
+    const enquiryLaunch = document.querySelector('#enquiry-launch');
+    let enquiryPanelOpen = false;
+    const googleFormUrls = {
+      employer: 'https://docs.google.com/forms/d/e/1FAIpQLSc79h_v3a3zd8VmvznylBqp73n2JZccgY7Mx_4fgkapOOgRnA/viewform?embedded=true',
+      candidate: 'https://docs.google.com/forms/d/e/1FAIpQLSc79h_v3a3zd8VmvznylBqp73n2JZccgY7Mx_4fgkapOOgRnA/viewform?embedded=true'
+    };
+
+    function getGoogleEmbedUrl(formUrl) {
+      if (!formUrl) return '';
+      try {
+        const url = new URL(formUrl);
+        if (url.protocol !== 'https:' || !url.hostname.endsWith('google.com')) return '';
+        url.searchParams.set('embedded', 'true');
+        return url.href;
+      } catch {
+        return '';
+      }
+    }
+
+    function setEnquiryType(type) {
+      const formType = type === 'candidate' ? 'candidate' : 'employer';
+      const isCandidate = formType === 'candidate';
+      const formUrl = googleFormUrls[formType];
+      const embedUrl = getGoogleEmbedUrl(formUrl);
+      const emailForm = document.querySelector('#enquiry-form');
+      const googleFormWrap = document.querySelector('#google-form-wrap');
+      const googleFormFrame = document.querySelector('#google-form-frame');
+      const googleFormTitle = document.querySelector('#google-form-title');
+      const googleFormOpen = document.querySelector('#google-form-open');
+      const setupNote = document.querySelector('#form-setup-note');
+
+      document.querySelector('#enquiry-type').value = isCandidate ? 'Finding a job' : 'Hiring talent';
+      document.querySelectorAll('[data-form-choice]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.formChoice === formType));
+      });
+      emailForm.hidden = false;
+      googleFormWrap.hidden = !embedUrl || !enquiryPanelOpen;
+      setupNote.hidden = false;
+      setupNote.textContent = embedUrl
+        ? 'If Google Forms asks you to sign in, use the email enquiry form below instead.'
+        : 'Google Forms are not connected yet. Use the email enquiry form below to contact Kapvia.';
+
+      if (embedUrl) {
+        googleFormFrame.title = `Kapvia ${isCandidate ? 'candidate' : 'employer'} enquiry form`;
+        googleFormTitle.textContent = isCandidate ? 'Candidate enquiry' : 'Employer enquiry';
+        googleFormOpen.href = formUrl;
+        if (enquiryPanelOpen && googleFormFrame.src !== embedUrl) {
+          googleFormFrame.src = embedUrl;
+        }
+      }
+    }
+
+    function openEnquiry(type = 'employer') {
+      enquiryPanelOpen = true;
+      enquiryLaunch.hidden = true;
+      enquiryPanel.hidden = false;
+      setEnquiryType(type);
+      requestAnimationFrame(() => enquiryPanel.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+    }
+
+    enquiryLaunch.addEventListener('click', () => openEnquiry());
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navigation.classList.toggle('is-open', !isOpen);
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+        navigation.classList.remove('is-open');
+      }
+    });
+
+    document.querySelectorAll('[data-enquiry]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        openEnquiry(link.dataset.enquiry);
+      });
+    });
+
+    document.querySelectorAll('[data-form-choice]').forEach((button) => {
+      button.addEventListener('click', () => setEnquiryType(button.dataset.formChoice));
+    });
+
+    setEnquiryType('employer');
+
+    document.querySelector('#enquiry-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const subject = `${formData.get('enquiry')} enquiry from ${formData.get('name')}`;
+      const message = [...formData.entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
+      window.location.href = `mailto:hello@kapvia.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
