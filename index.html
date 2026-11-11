@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kapvia People Solutions — Staffing & Recruitment Across India</title>
   <meta name="description" content="Kapvia People Solutions connects fast-scaling organisations with top talent across India. Permanent staffing, contract hiring, executive search, and talent consulting.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'><path d='M22 6h16a4 4 0 0 1 4 4v16a4 4 0 0 1-8 0V14H22a4 4 0 0 1 0-8z' fill='%2300c2a8'/><path d='M10 18h16a4 4 0 0 1 4 4v16a4 4 0 0 1-8 0V26H10a4 4 0 0 1 0-8z' fill='%2300c2a8'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 38' fill='none' stroke='%2318cb96' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'><path d='M 5 20 H 19 V 34'/><path d='M 17 8 H 31 V 22'/></svg>">
 
-  <!-- Google Fonts: Titillium Web -->
+  <!-- Google Fonts: Titillium Web & Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -25,9 +26,9 @@
             card: 'hsl(226, 20%, 13%)',
             'card-foreground': 'hsl(210, 17%, 98%)',
             primary: {
-              DEFAULT: 'hsl(172, 100%, 38%)',
+              DEFAULT: '#18cb96',
               foreground: 'hsl(0, 0%, 100%)',
-              light: 'hsl(172, 100%, 48%)'
+              light: '#24e0a7'
             },
             secondary: {
               DEFAULT: 'hsl(202, 100%, 38%)',
@@ -43,7 +44,7 @@
             },
             border: 'hsl(231, 19%, 20%)',
             input: 'hsl(231, 19%, 20%)',
-            ring: 'hsl(172, 100%, 38%)'
+            ring: '#18cb96'
           },
           fontFamily: {
             sans: ['"Titillium Web"', 'sans-serif'],
@@ -68,8 +69,8 @@
     :root {
       --bg: #0e131d;
       --card-bg: #1a202c;
-      --primary: #00c2a8;
-      --primary-hover: #00dabf;
+      --primary: #18cb96;
+      --primary-hover: #24e0a7;
       --border-color: #262e3d;
     }
 
@@ -92,7 +93,7 @@
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: hsl(172, 100%, 38%);
+      background: #18cb96;
     }
 
     /* Geometric Accent Polygon Clips */
@@ -124,19 +125,23 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         
-        <!-- Official Kapvia Brand Logo (Direct Corner-Nestled Vector Chevrons) -->
+        <!-- Official Kapvia Brand Logo (Matching 1.svg artwork with clear non-overlapping tagline) -->
         <a href="#home" onclick="navigateTo('home')" class="flex flex-col justify-center shrink-0 focus:outline-none group py-1 select-none" aria-label="Kapvia People Solutions Home">
-          <div class="flex items-start">
-            <span class="text-[27px] md:text-[32px] font-black tracking-[-0.03em] text-white leading-none font-sans">KAPVIA</span>
-            <!-- Dual Growth Chevrons Snug to the Upper Right Corner of 'A' -->
-            <svg class="w-5 h-5 md:w-6 md:h-6 -ml-0.5 -mt-2.5 md:-mt-3 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 42 42" fill="none">
-              <!-- Lower Left Chevron (Directly at top-right corner of 'A') -->
-              <path d="M 6 22 H 22 V 38" stroke="#00c2a8" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+          <div class="flex items-start leading-none">
+            <!-- KAPVIA Wordmark in sleek authentic geometric bold -->
+            <span class="text-[26px] md:text-[30px] font-bold tracking-[0.02em] text-white leading-none uppercase" style="font-family: 'Montserrat', sans-serif;">KAPVIA</span>
+            <!-- Mint-Emerald Chevrons (#18cb96) nested snug at upper-right corner of 'A' -->
+            <svg class="w-5 h-5 md:w-6 md:h-6 -ml-0.5 -mt-2 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 38 38" fill="none">
+              <!-- Lower Left Chevron -->
+              <path d="M 6 19 H 19 V 32" stroke="#18cb96" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
               <!-- Upper Right Chevron -->
-              <path d="M 20 8 H 36 V 24" stroke="#00dabf" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M 17 8 H 30 V 21" stroke="#18cb96" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <span class="text-[11px] md:text-[13px] font-light tracking-[0.05em] text-gray-200 leading-tight mt-0.5">People Solutions</span>
+          <!-- Tagline: People Solutions (Clear, crisp, uncrowded) -->
+          <span class="text-[11px] md:text-[12.5px] font-light tracking-[0.06em] text-white/90 leading-tight mt-1" style="font-family: 'Montserrat', sans-serif;">
+            People Solutions
+          </span>
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -186,6 +191,7 @@
 
     <!-- ================= PAGE 1: HOME ================= -->
     <div id="page-home" class="page-view">
+      <!-- Split Screen Hero -->
       <section class="relative min-h-[92vh] flex flex-col md:flex-row items-stretch overflow-hidden border-b border-border">
         
         <!-- Left Split: For Employers -->
@@ -215,6 +221,7 @@
           </div>
         </div>
 
+        <!-- Diagonal Center Divider Accent -->
         <div class="absolute inset-y-0 left-1/2 w-16 -translate-x-1/2 z-20 hidden md:block pointer-events-none">
           <div class="absolute inset-0 clip-divider bg-primary opacity-80 shadow-2xl"></div>
         </div>
@@ -247,10 +254,11 @@
         </div>
       </section>
 
-      <!-- Key Performance Metrics -->
+      <!-- Key Performance Metrics with 1 to N Incremental Animations -->
       <section class="bg-card border-b border-border py-14 stats-observer-section">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+            
             <div class="p-4 rounded-xl bg-background/40 border border-border/50">
               <div class="flex items-end justify-center gap-0.5">
                 <span class="text-4xl md:text-5xl font-bold text-primary font-heading counter" data-target="200" data-duration="1700">1</span>
@@ -282,6 +290,7 @@
               </div>
               <p class="text-sm text-muted-foreground mt-2 font-medium">Avg. Time-to-Hire</p>
             </div>
+
           </div>
         </div>
       </section>
@@ -401,9 +410,16 @@
           <p class="text-lg text-foreground/70 max-w-xl mb-8 leading-relaxed">
             Kapvia partners with mid-size businesses, fast-growing startups, and established enterprises across India to deliver pre-vetted, culture-fit talent across functions and seniority levels.
           </p>
+          <div class="flex flex-wrap gap-4">
+            <button onclick="scrollToElement('enquire-employer')" class="inline-flex items-center justify-center gap-2 text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary-light h-12 rounded-md px-8 shadow-lg shadow-primary/25 transition-all">
+              <span>Start Hiring Today</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
         </div>
       </section>
 
+      <!-- Solutions Grid -->
       <section id="enquire-employer" class="py-24 bg-card border-t border-border">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-10 text-center">
@@ -416,23 +432,23 @@
             <form onsubmit="handleEmployerSubmit(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div class="flex flex-col gap-1.5">
                 <label for="ef-name" class="text-sm font-medium text-foreground">Your Name <span class="text-primary">*</span></label>
-                <input id="ef-name" name="name" required placeholder="Arjun Kapoor" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="ef-name" required placeholder="Arjun Kapoor" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="ef-email" class="text-sm font-medium text-foreground">Work Email <span class="text-primary">*</span></label>
-                <input id="ef-email" name="email" required type="email" placeholder="arjun@company.com" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="ef-email" required type="email" placeholder="arjun@company.com" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="ef-phone" class="text-sm font-medium text-foreground">Phone Number</label>
-                <input id="ef-phone" name="phone" type="tel" placeholder="+91 98765 43210" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="ef-phone" type="tel" placeholder="+91 98765 43210" class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="ef-company" class="text-sm font-medium text-foreground">Company Name <span class="text-primary">*</span></label>
-                <input id="ef-company" name="company" required placeholder="Acme Technologies Pvt. Ltd." class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="ef-company" required placeholder="Acme Technologies Pvt. Ltd." class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="ef-size" class="text-sm font-medium text-foreground">Company Size <span class="text-primary">*</span></label>
-                <select id="ef-size" name="company_size" required class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <select id="ef-size" required class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
                   <option value="" disabled selected>Select company size</option>
                   <option value="1-50">1–50 employees</option>
                   <option value="51-200">51–200 employees</option>
@@ -442,7 +458,7 @@
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="ef-need" class="text-sm font-medium text-foreground">Hiring Need <span class="text-primary">*</span></label>
-                <select id="ef-need" name="hiring_need" required class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <select id="ef-need" required class="h-11 rounded-lg border border-border bg-muted px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
                   <option value="" disabled selected>Select hiring need</option>
                   <option value="Permanent Staffing">Permanent Staffing</option>
                   <option value="Contract Hiring">Contract Hiring</option>
@@ -453,7 +469,7 @@
               </div>
               <div class="flex flex-col gap-1.5 sm:col-span-2">
                 <label for="ef-msg" class="text-sm font-medium text-foreground">Tell us about the role(s)</label>
-                <textarea id="ef-msg" name="message" rows="4" placeholder="Tell us more about the positions you are looking to fill..." class="rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"></textarea>
+                <textarea id="ef-msg" rows="4" placeholder="Tell us more about the positions you are looking to fill..." class="rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"></textarea>
               </div>
               <div class="sm:col-span-2">
                 <button type="submit" class="w-full sm:w-auto h-12 rounded-lg px-8 bg-primary text-primary-foreground font-semibold hover:bg-primary-light transition-all shadow-md">
@@ -480,19 +496,19 @@
             <form onsubmit="handleCandidateSubmit(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div class="flex flex-col gap-1.5">
                 <label for="cf-name" class="text-sm font-medium text-foreground">Full Name <span class="text-primary">*</span></label>
-                <input id="cf-name" name="name" required placeholder="Pooja Verma" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="cf-name" required placeholder="Pooja Verma" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="cf-email" class="text-sm font-medium text-foreground">Email Address <span class="text-primary">*</span></label>
-                <input id="cf-email" name="email" required type="email" placeholder="pooja@example.com" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="cf-email" required type="email" placeholder="pooja@example.com" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="cf-phone" class="text-sm font-medium text-foreground">Contact Number <span class="text-primary">*</span></label>
-                <input id="cf-phone" name="phone" required type="tel" placeholder="+91 98765 00000" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="cf-phone" required type="tel" placeholder="+91 98765 00000" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5">
                 <label for="cf-experience" class="text-sm font-medium text-foreground">Total Experience <span class="text-primary">*</span></label>
-                <select id="cf-experience" name="experience" required class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <select id="cf-experience" required class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
                   <option value="" disabled selected>Select years</option>
                   <option value="1-3">1–3 years</option>
                   <option value="4-7">4–7 years</option>
@@ -502,11 +518,11 @@
               </div>
               <div class="flex flex-col gap-1.5 sm:col-span-2">
                 <label for="cf-domain" class="text-sm font-medium text-foreground">Primary Skill / Current Domain <span class="text-primary">*</span></label>
-                <input id="cf-domain" name="domain" required placeholder="e.g. Senior Full Stack Engineer (React/Node)" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="cf-domain" required placeholder="e.g. Senior Full Stack Engineer (React/Node)" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="flex flex-col gap-1.5 sm:col-span-2">
                 <label for="cf-linkedin" class="text-sm font-medium text-foreground">LinkedIn Profile or Portfolio URL</label>
-                <input id="cf-linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/username" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
+                <input id="cf-linkedin" type="url" placeholder="https://linkedin.com/in/username" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
               <div class="sm:col-span-2">
                 <button type="submit" class="w-full sm:w-auto h-12 rounded-lg px-8 bg-primary text-primary-foreground font-semibold hover:bg-primary-light transition-all shadow-md">
@@ -537,28 +553,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-2xl mx-auto rounded-2xl p-8 md:p-10 border border-border bg-card shadow-2xl">
             <h2 class="text-2xl font-bold mb-2">Send Us a Message</h2>
-            <p class="text-muted-foreground text-sm mb-8">Fill in the form below and we will route your inquiry immediately to kapvia99@gmail.com.</p>
+            <p class="text-muted-foreground text-sm mb-8">Fill in the details below and we will route your inquiry immediately to hello@kavpia.in.</p>
 
             <form onsubmit="handleContactSubmit(event)" class="flex flex-col gap-5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div class="flex flex-col gap-1.5">
                   <label for="contact-name" class="text-sm font-medium">Full Name <span class="text-accent">*</span></label>
-                  <input id="contact-name" name="name" required placeholder="Your full name" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <input id="contact-name" required placeholder="Your full name" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
                 </div>
                 <div class="flex flex-col gap-1.5">
                   <label for="contact-email" class="text-sm font-medium">Email Address <span class="text-accent">*</span></label>
-                  <input id="contact-email" name="email" required type="email" placeholder="your@email.com" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <input id="contact-email" required type="email" placeholder="your@email.com" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div class="flex flex-col gap-1.5">
                   <label for="contact-phone" class="text-sm font-medium">Phone Number</label>
-                  <input id="contact-phone" name="phone" type="tel" placeholder="+91 98765 43210" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <input id="contact-phone" type="tel" placeholder="+91 98765 43210" class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
                 </div>
                 <div class="flex flex-col gap-1.5">
                   <label for="contact-type" class="text-sm font-medium">Enquiry Type <span class="text-accent">*</span></label>
-                  <select id="contact-type" name="enquiry_type" required class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <select id="contact-type" required class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all">
                     <option value="">Select enquiry type</option>
                     <option value="I'm looking to hire">I'm looking to hire</option>
                     <option value="I'm looking for a job">I'm looking for a job</option>
@@ -569,7 +585,7 @@
 
               <div class="flex flex-col gap-1.5">
                 <label for="contact-msg" class="text-sm font-medium">Message <span class="text-accent">*</span></label>
-                <textarea id="contact-msg" name="message" required rows="5" placeholder="Tell us more about what you're looking for..." class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
+                <textarea id="contact-msg" required rows="5" placeholder="Tell us more about what you're looking for..." class="w-full rounded-lg px-4 py-3 text-sm border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"></textarea>
               </div>
 
               <button type="submit" class="inline-flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary-light transition-all shadow-md">
@@ -590,16 +606,18 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         
         <div class="lg:col-span-2">
-          <!-- Footer Brand Logo (Matched to 1.svg) -->
+          <!-- Footer Brand Logo (Exact Vector Outlines from 1.svg) -->
           <a href="#home" onclick="navigateTo('home')" class="inline-flex flex-col justify-center mb-5 focus:outline-none group select-none" aria-label="Kapvia People Solutions Home">
-            <div class="flex items-start">
-              <span class="text-[27px] md:text-[30px] font-black tracking-[-0.03em] text-white leading-none font-sans">KAPVIA</span>
-              <svg class="w-5 h-5 md:w-6 md:h-6 -ml-0.5 -mt-2.5 md:-mt-3 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 42 42" fill="none">
-                <path d="M 6 22 H 22 V 38" stroke="#00c2a8" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M 20 8 H 36 V 24" stroke="#00dabf" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+            <div class="flex items-start leading-none">
+              <span class="text-[25px] md:text-[28px] font-bold tracking-[0.02em] text-white leading-none uppercase" style="font-family: 'Montserrat', sans-serif;">KAPVIA</span>
+              <svg class="w-5 h-5 md:w-6 md:h-6 -ml-0.5 -mt-2 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 38 38" fill="none">
+                <path d="M 6 19 H 19 V 32" stroke="#18cb96" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 17 8 H 30 V 21" stroke="#18cb96" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <span class="text-[11px] md:text-[12px] font-light tracking-[0.05em] text-gray-200 leading-tight mt-0.5">People Solutions</span>
+            <span class="text-[10px] md:text-[11px] font-light tracking-[0.06em] text-white/90 leading-tight mt-1" style="font-family: 'Montserrat', sans-serif;">
+              People Solutions
+            </span>
           </a>
           <p class="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
             Connecting exceptional talent with forward-thinking organisations across India. Pan-India, remote-first.
@@ -607,7 +625,7 @@
           <div class="flex flex-col gap-2.5 text-sm text-muted-foreground">
             <span class="flex items-center gap-2">
               <i data-lucide="mail" class="w-4 h-4 text-primary shrink-0"></i>
-              kapvia99@gmail.com
+              hello@kavpia.in
             </span>
           </div>
         </div>
@@ -637,14 +655,81 @@
 
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
-    const TARGET_EMAIL = "kapvia99@gmail.com";
-
+    // Safe Lucide icon initializer
     function safeInitIcons() {
       if (typeof window.lucide !== 'undefined' && typeof window.lucide.createIcons === 'function') {
-        try { window.lucide.createIcons(); } catch (err) {}
+        try {
+          window.lucide.createIcons();
+        } catch (err) {
+          console.warn('Lucide icon rendering warning:', err);
+        }
+      } else {
+        setTimeout(() => {
+          if (typeof window.lucide !== 'undefined' && typeof window.lucide.createIcons === 'function') {
+            try {
+              window.lucide.createIcons();
+            } catch (e) {}
+          }
+        }, 300);
       }
     }
 
+    // Number Counter Animation Engine (Smooth cubic ease-out from 1 to target)
+    function animateSingleCounter(counter) {
+      const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+      const duration = parseInt(counter.getAttribute('data-duration'), 10) || 1600;
+      let startTimestamp = null;
+      counter.innerText = "1";
+
+      function step(currentTime) {
+        if (!startTimestamp) startTimestamp = currentTime;
+        const progress = Math.min((currentTime - startTimestamp) / duration, 1);
+        
+        // Cubic easeOut function: 1 - (1 - t)^3
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentCount = Math.max(1, Math.floor(1 + (target - 1) * easeProgress));
+
+        counter.innerText = currentCount;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          counter.innerText = target;
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function initCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        animateSingleCounter(counter);
+      });
+    }
+
+    // IntersectionObserver to re-trigger counter animation whenever stats section comes into viewport
+    function setupCounterObserver() {
+      if (!('IntersectionObserver' in window)) {
+        initCounters();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(c => animateSingleCounter(c));
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.stats-observer-section').forEach(sec => {
+        observer.observe(sec);
+      });
+    }
+
+    // Initialize scripts safely
     document.addEventListener("DOMContentLoaded", () => {
       safeInitIcons();
       initCounters();
@@ -652,6 +737,7 @@
       handleHashRouting();
     });
 
+    // Hash & Tab Routing
     function navigateTo(pageId) {
       window.location.hash = pageId;
       renderPage(pageId);
@@ -678,6 +764,15 @@
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
       safeInitIcons();
+      
+      // Re-trigger counter animation when navigating to any page containing metrics
+      setTimeout(() => {
+        const activeContainer = document.getElementById(`page-${pageId}`);
+        if (activeContainer) {
+          const pageCounters = activeContainer.querySelectorAll('.counter');
+          pageCounters.forEach(c => animateSingleCounter(c));
+        }
+      }, 100);
     }
 
     function handleHashRouting() {
@@ -691,31 +786,63 @@
 
     window.addEventListener('hashchange', handleHashRouting);
 
+    // Mobile Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     }
 
+    // Scroll Helper
     function scrollToElement(id) {
       setTimeout(() => {
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }, 100);
     }
 
+    // How it works switcher
+    function switchProcessTab(type) {
+      const empBtn = document.getElementById('toggle-process-employer');
+      const canBtn = document.getElementById('toggle-process-candidate');
+      const empContent = document.getElementById('process-employer-content');
+      const canContent = document.getElementById('process-candidate-content');
+
+      if (type === 'employer') {
+        empBtn.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-primary text-primary-foreground shadow-sm";
+        canBtn.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-muted-foreground hover:text-foreground";
+        empContent.classList.remove('hidden');
+        canContent.classList.add('hidden');
+      } else {
+        canBtn.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-primary text-primary-foreground shadow-sm";
+        empBtn.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 text-muted-foreground hover:text-foreground";
+        canContent.classList.remove('hidden');
+        empContent.classList.add('hidden');
+      }
+      safeInitIcons();
+    }
+
+    // Toast Notification helper
     function showToast(title, desc) {
       const toast = document.getElementById('toast');
       document.getElementById('toast-title').innerText = title;
       document.getElementById('toast-desc').innerText = desc;
       toast.classList.remove('hidden');
-      setTimeout(() => { toast.classList.add('hidden'); }, 4500);
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4500);
     }
 
-    async function forwardEmail(data, subject) {
+    // Inquiry destination email
+    const INQUIRY_EMAIL = "hello@kavpia.in";
+
+    // Forward form submissions directly to inquiry mail
+    async function forwardInquiry(data, subject) {
       try {
-        await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+        await fetch(`https://formsubmit.co/ajax/${INQUIRY_EMAIL}`, {
           method: "POST",
-          headers: { 
+          headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
@@ -726,27 +853,28 @@
           })
         });
       } catch (err) {
-        console.warn("Mail dispatch error:", err);
+        console.warn("Inquiry mail forward error:", err);
       }
     }
 
+    // Form Submissions
     async function handleEmployerSubmit(e) {
       e.preventDefault();
       const form = e.target;
       const name = document.getElementById('ef-name').value;
       const data = {
-        Form_Type: "Employer Enquiry",
+        Form: "Employer Enquiry",
         Name: name,
-        Email: document.getElementById('ef-email').value,
+        Work_Email: document.getElementById('ef-email').value,
         Phone: document.getElementById('ef-phone').value,
         Company: document.getElementById('ef-company').value,
-        Size: document.getElementById('ef-size').value,
+        Company_Size: document.getElementById('ef-size').value,
         Hiring_Need: document.getElementById('ef-need').value,
-        Details: document.getElementById('ef-msg').value
+        Role_Details: document.getElementById('ef-msg').value
       };
-      showToast("Brief Submitted!", `Thank you ${name}. Sent to ${TARGET_EMAIL}.`);
+      showToast("Brief Submitted!", `Thank you ${name}. We have forwarded your brief to ${INQUIRY_EMAIL}.`);
       form.reset();
-      await forwardEmail(data, `New Employer Mandate: ${data.Company} (${name})`);
+      await forwardInquiry(data, `New Employer Mandate: ${data.Company} (${name})`);
     }
 
     async function handleCandidateSubmit(e) {
@@ -754,17 +882,18 @@
       const form = e.target;
       const name = document.getElementById('cf-name').value;
       const data = {
-        Form_Type: "Candidate Registration",
+        Form: "Candidate Registration",
         Name: name,
         Email: document.getElementById('cf-email').value,
         Phone: document.getElementById('cf-phone').value,
         Experience: document.getElementById('cf-experience').value,
         Domain_Skill: document.getElementById('cf-domain').value,
-        LinkedIn: document.getElementById('cf-linkedin').value
+        LinkedIn: document.getElementById('cf-linkedin').value,
+        Notes: document.getElementById('cf-notes').value
       };
-      showToast("Profile Registered!", `Welcome ${name}. Sent to ${TARGET_EMAIL}.`);
+      showToast("Profile Registered!", `Welcome ${name}. Your profile has been sent to ${INQUIRY_EMAIL}.`);
       form.reset();
-      await forwardEmail(data, `New Candidate: ${name} (${data.Domain_Skill})`);
+      await forwardInquiry(data, `New Candidate Registration: ${name} (${data.Domain_Skill})`);
     }
 
     async function handleContactSubmit(e) {
@@ -772,27 +901,17 @@
       const form = e.target;
       const name = document.getElementById('contact-name').value;
       const data = {
-        Form_Type: "General Contact Enquiry",
+        Form: "General Contact Message",
         Name: name,
         Email: document.getElementById('contact-email').value,
         Phone: document.getElementById('contact-phone').value,
         Enquiry_Type: document.getElementById('contact-type').value,
         Message: document.getElementById('contact-msg').value
       };
-      showToast("Message Sent!", `Thank you ${name}. Routed to ${TARGET_EMAIL}.`);
+      showToast("Message Sent!", `Thank you ${name}. Your message has been sent to ${INQUIRY_EMAIL}.`);
       form.reset();
-      await forwardEmail(data, `Contact Form: ${data.Enquiry_Type} from ${name}`);
+      await forwardInquiry(data, `Inquiry [${data.Enquiry_Type}] from ${name}`);
     }
-
-    function initCounters() {
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
-        counter.innerText = target;
-      });
-    }
-
-    function setupCounterObserver() {}
   </script>
 </body>
 </html>
