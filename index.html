@@ -198,8 +198,8 @@
         <div class="relative flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 py-28 md:py-36 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" 
                alt="Corporate business team hiring" 
-               class="absolute inset-0 w-full h-full object-cover opacity-30 select-none">
-          <div class="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/50 pointer-events-none"></div>
+               class="absolute inset-0 w-full h-full object-cover opacity-45 select-none">
+          <div class="absolute inset-0 bg-gradient-to-br from-background/75 via-background/55 to-background/35 pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-32 h-32 pointer-events-none clip-corner-tr bg-primary/20"></div>
 
           <div class="relative z-10 max-w-md">
@@ -230,8 +230,8 @@
         <div class="relative flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-16 py-28 md:py-36 overflow-hidden border-t md:border-t-0 md:border-l border-border/40">
           <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=80" 
                alt="Professional ready for their next role" 
-               class="absolute inset-0 w-full h-full object-cover opacity-25 select-none">
-          <div class="absolute inset-0 bg-gradient-to-bl from-background/95 via-background/80 to-background/50 pointer-events-none"></div>
+               class="absolute inset-0 w-full h-full object-cover opacity-45 select-none">
+          <div class="absolute inset-0 bg-gradient-to-bl from-background/75 via-background/55 to-background/35 pointer-events-none"></div>
           <div class="absolute bottom-0 left-0 w-32 h-32 pointer-events-none clip-corner-bl bg-primary/20"></div>
 
           <div class="relative z-10 max-w-md ml-auto">
@@ -524,6 +524,10 @@
                 <label for="cf-linkedin" class="text-sm font-medium text-foreground">LinkedIn Profile or Portfolio URL</label>
                 <input id="cf-linkedin" type="url" placeholder="https://linkedin.com/in/username" class="h-11 rounded-lg border border-border bg-background px-4 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition">
               </div>
+              <div class="flex flex-col gap-1.5 sm:col-span-2">
+                <label for="cf-notes" class="text-sm font-medium text-foreground">Additional Notes</label>
+                <textarea id="cf-notes" rows="3" placeholder="Anything else you would like us to know..." class="rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"></textarea>
+              </div>
               <div class="sm:col-span-2">
                 <button type="submit" class="w-full sm:w-auto h-12 rounded-lg px-8 bg-primary text-primary-foreground font-semibold hover:bg-primary-light transition-all shadow-md">
                   Submit Candidate Registration
@@ -553,7 +557,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-2xl mx-auto rounded-2xl p-8 md:p-10 border border-border bg-card shadow-2xl">
             <h2 class="text-2xl font-bold mb-2">Send Us a Message</h2>
-            <p class="text-muted-foreground text-sm mb-8">Fill in the details below and we will route your inquiry immediately to hello@kapvia.in.</p>
+            <p class="text-muted-foreground text-sm mb-8">Fill in the details below and we will route your inquiry immediately to hello@kapvia.com.</p>
 
             <form onsubmit="handleContactSubmit(event)" class="flex flex-col gap-5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -625,7 +629,7 @@
           <div class="flex flex-col gap-2.5 text-sm text-muted-foreground">
             <span class="flex items-center gap-2">
               <i data-lucide="mail" class="w-4 h-4 text-primary shrink-0"></i>
-              hello@kavpia.in
+              hello@kapvia.com
             </span>
           </div>
         </div>
@@ -835,25 +839,42 @@
     }
 
     // Inquiry destination email
-    const INQUIRY_EMAIL = "hello@kapvia.in";
+    const INQUIRY_EMAIL = "hello@kapvia.com";
 
-    // Forward form submissions directly to inquiry mail
+    // Forward form submissions directly to the inquiry inbox.
     async function forwardInquiry(data, subject) {
+      const response = await fetch(`https://formsubmit.co/ajax/${INQUIRY_EMAIL}`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: subject,
+          _template: "table",
+          ...data
+        })
+      });
+      const result = await response.json();
+
+      if (!response.ok || (result.success !== true && result.success !== "true")) {
+        throw new Error(result.message || `Form service returned HTTP ${response.status}`);
+      }
+    }
+
+    async function submitInquiry(form, data, subject, successTitle, successMessage) {
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+
       try {
-        await fetch(`https://formsubmit.co/ajax/${INQUIRY_EMAIL}`, {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            _subject: subject,
-            _template: "table",
-            ...data
-          })
-        });
+        await forwardInquiry(data, subject);
+        form.reset();
+        showToast(successTitle, successMessage);
       } catch (err) {
-        console.warn("Inquiry mail forward error:", err);
+        console.error("Inquiry mail forward error:", err);
+        showToast("Unable to send", `Your message was not confirmed as sent. Please try again or email ${INQUIRY_EMAIL}.`);
+      } finally {
+        if (submitButton) submitButton.disabled = false;
       }
     }
 
@@ -872,9 +893,7 @@
         Hiring_Need: document.getElementById('ef-need').value,
         Role_Details: document.getElementById('ef-msg').value
       };
-      showToast("Brief Submitted!", `Thank you ${name}. We have forwarded your brief to ${INQUIRY_EMAIL}.`);
-      form.reset();
-      await forwardInquiry(data, `New Employer Mandate: ${data.Company} (${name})`);
+      await submitInquiry(form, data, `New Employer Mandate: ${data.Company} (${name})`, "Brief Submitted!", `Thank you ${name}. Your brief has been sent to ${INQUIRY_EMAIL}.`);
     }
 
     async function handleCandidateSubmit(e) {
@@ -891,9 +910,7 @@
         LinkedIn: document.getElementById('cf-linkedin').value,
         Notes: document.getElementById('cf-notes').value
       };
-      showToast("Profile Registered!", `Welcome ${name}. Your profile has been sent to ${INQUIRY_EMAIL}.`);
-      form.reset();
-      await forwardInquiry(data, `New Candidate Registration: ${name} (${data.Domain_Skill})`);
+      await submitInquiry(form, data, `New Candidate Registration: ${name} (${data.Domain_Skill})`, "Profile Registered!", `Welcome ${name}. Your profile has been sent to ${INQUIRY_EMAIL}.`);
     }
 
     async function handleContactSubmit(e) {
@@ -908,9 +925,7 @@
         Enquiry_Type: document.getElementById('contact-type').value,
         Message: document.getElementById('contact-msg').value
       };
-      showToast("Message Sent!", `Thank you ${name}. Your message has been sent to ${INQUIRY_EMAIL}.`);
-      form.reset();
-      await forwardInquiry(data, `Inquiry [${data.Enquiry_Type}] from ${name}`);
+      await submitInquiry(form, data, `Inquiry [${data.Enquiry_Type}] from ${name}`, "Message Sent!", `Thank you ${name}. Your message has been sent to ${INQUIRY_EMAIL}.`);
     }
   </script>
 </body>
